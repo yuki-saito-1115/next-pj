@@ -1,0 +1,16 @@
+@use 'styles/variable' as var;
+@use 'styles/common/mixin/' as mixin;
+@use 'styles/common/extend/' as *;
+@use 'styles/common/function/' as func;
+
+// vertical-align
+// ---------------------------------------------------------------------------
+.verticalAlign {
+    $ary: top, bottom, middle;
+
+    @each $val in $ary {
+        &-#{$val} {
+            vertical-align: $val;
+        }
+    }
+}

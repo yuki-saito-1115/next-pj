@@ -1,0 +1,10 @@
+@use '../../variable' as var;
+@use '../extend/reset-margin' as *;
+
+// 中央寄せのコンテナー
+// ---------------------------------------------------------------------------
+%structure-inner {
+    @extend %reset-margin;
+
+    grid-column: 2 / 3;
+}

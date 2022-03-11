@@ -1,0 +1,46 @@
+@use 'sass:math';
+@use 'styles/variable' as var;
+@use 'styles/common/mixin/' as mixin;
+@use 'styles/common/extend/' as *;
+@use 'styles/common/function/' as func;
+
+// Lst
+// ---------------------------------------------------------------------------
+.root {
+    @include mixin.module-margin;
+}
+
+// .lst {
+// }
+
+.itm {
+    list-style: none;
+    padding-left: 1em;
+    position: relative;
+
+    // bullet
+    &::before {
+        background-color: var.$COLOR;
+        border-radius: 50%;
+        content: '';
+        display: block;
+        height: .3em;
+        left: 0;
+        position: absolute;
+        top: .75em;
+        width: .3em;
+    }
+}
+
+
+// // Wide Viewport
+// @include mixin.media-query {
+//     .wrap {
+//     }
+
+//     .outer {
+//     }
+
+//     .inner {
+//     }
+// }

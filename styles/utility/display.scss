@@ -1,0 +1,45 @@
+@use 'styles/variable' as var;
+@use 'styles/common/mixin/' as mixin;
+@use 'styles/common/extend/' as *;
+@use 'styles/common/function/' as func;
+
+// display
+// ---------------------------------------------------------------------------
+.display {
+    $map: (
+        none: none,
+        inline: inline,
+        inlineblock: inline-block,
+        block: block,
+        flex: flex,
+        inlineflex: inline-flex
+    );
+
+    @each $key, $val in $map {
+        &-#{$key} {
+            display: $val !important;
+        }
+    }
+
+
+    // Narrow Viewport
+    @include mixin.media-query($range: below) {
+        @each $key, $val in $map {
+            &-#{$key}-narrow {
+                display: $val !important;
+            }
+        }
+    }
+
+
+    // Wide Viewport
+    @include mixin.media-query {
+        @each $key, $val in $map {
+            &-#{$key}-wide {
+                display: $val !important;
+            }
+        }
+    }
+}
+
+

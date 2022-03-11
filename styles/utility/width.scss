@@ -1,0 +1,18 @@
+@use 'styles/variable' as var;
+@use 'styles/common/mixin/' as mixin;
+@use 'styles/common/extend/' as *;
+@use 'styles/common/function/' as func;
+
+// width
+// ---------------------------------------------------------------------------
+.width {
+    $loopStart: 1;
+    $loopMax: 5;
+    $loopStep: 20;
+
+    @for $i from $loopStart through $loopMax {
+        &-#{$i * $loopStep} {
+            width: #{$i * $loopStep * 1%} !important;
+        }
+    }
+}

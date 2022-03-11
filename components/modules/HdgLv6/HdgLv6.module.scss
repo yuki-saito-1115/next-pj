@@ -1,0 +1,24 @@
+@use 'sass:math';
+@use 'styles/variable' as var;
+@use 'styles/common/mixin/' as mixin;
+@use 'styles/common/extend/' as *;
+@use 'styles/common/function/' as func;
+
+// HdgLv6
+// ---------------------------------------------------------------------------
+.root {
+    @include mixin.module-margin;
+}
+
+// .hdg {
+// }
+
+.title {
+    display: block;
+    font-size: func.px-to-rem(16);
+
+    // Wide Viewport
+    @include mixin.media-query {
+        font-size: func.px-to-rem(20);
+    }
+}

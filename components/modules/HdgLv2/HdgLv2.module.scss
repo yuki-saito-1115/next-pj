@@ -1,0 +1,42 @@
+@use 'sass:math';
+@use 'styles/variable' as var;
+@use 'styles/common/mixin/' as mixin;
+@use 'styles/common/extend/' as *;
+@use 'styles/common/function/' as func;
+
+// HdgLv2
+// ---------------------------------------------------------------------------
+.root {
+    @include mixin.module-margin;
+
+    padding-bottom: 15px;
+    position: relative;
+    text-align: center;
+
+    // marker
+    &::before {
+        background-color: #f00;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 5px;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        width: 40px;
+    }
+}
+
+.hdg {
+    line-height: 1.5;
+}
+
+.title {
+    display: block;
+    font-size: func.px-to-rem(22);
+
+    // Wide Viewport
+    @include mixin.media-query {
+        font-size: func.px-to-rem(28);
+    }
+}

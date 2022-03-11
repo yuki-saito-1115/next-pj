@@ -1,0 +1,10 @@
+@use 'styles/variable' as var;
+@use 'styles/common/mixin/' as mixin;
+@use 'styles/common/extend/' as *;
+@use 'styles/common/function/' as func;
+
+// モジュール配置用コンテナー
+// ---------------------------------------------------------------------------
+.bin {
+    @extend %reset-margin;
+}
