@@ -10,7 +10,7 @@
     "packageManager": "yarn@1.22.17",
     "scripts": {
         "dev": "next dev",
-        "build": "next build && npm run build-storybook",
+        "build": "next build && build-storybook -c .storybook -o public/_storybook",
         "start": "next start",
         "lint": "next lint",
         "storybook": "start-storybook -p 6006",
