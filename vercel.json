@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/_storybook",
-      "destination": "/_storybook//?path=/story/modules-heading-level1--default"
+      "destination": "/_storybook/?path=/story/modules-heading-level1--default"
     }
   ]
 }
