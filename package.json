@@ -4,14 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "run-s build-storybook next",
-    "next": "run-s next:*",
-    "next:build": "next build",
-    "next:export": "next export",
+    "build": "next build && next export && build-storybook -o public/_storybook",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -c .storybook -o public/_storybook"
+    "build-storybook": "build-storybook -o public/_storybook"
   },
   "dependencies": {
     "next": "12.1.0",
