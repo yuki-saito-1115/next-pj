@@ -6,8 +6,6 @@
     "build": "npm run build:export && npm run build-storybook",
     "build-storybook": "build-storybook -o out/_mlc/storybook",
     "build:export": "next build && next export",
-
-
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
