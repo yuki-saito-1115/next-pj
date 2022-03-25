@@ -5,26 +5,26 @@ module.exports = {
   managerHead: (head) => {
     return `
       ${head}
-      <link rel="shortcut icon" type="image/x-icon" href="_mlc/storybook/favicon.ico">
+      <link rel="shortcut icon" type="image/x-icon" href="storybook/favicon.ico">
       <script>
-        window['PREVIEW_URL'] = '_mlc/storybook/iframe.html';
+        window['PREVIEW_URL'] = 'storybook/iframe.html';
       </script>
     `;
   },
   webpackFinal: async (config) => {
     return merge(config, {
       output: {
-        publicPath: `_mlc/storybook/`,
+        publicPath: `storybook/`,
       },
     });
   },
-  // managerWebpack: async (config) => {
-  //   return merge(config, {
-  //     output: {
-  //       publicPath: `_mlc/storybook/`,
-  //     },
-  //   });
-  // },
+  managerWebpack: async (config) => {
+    return merge(config, {
+      output: {
+        publicPath: `storybook/`,
+      },
+    });
+  },
 
   'typescript': {
     reactDocgen: false
