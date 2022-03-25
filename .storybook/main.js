@@ -2,6 +2,11 @@ const { merge } = require('webpack-merge');
 
 const prefix = process.env.STORYBOOK_PREFIX ? `/${process.env.STORYBOOK_PREFIX}` : '';
 
+const getBaseDir = () => {
+  const tsconfig = require('../tsconfig.json');
+  return path.resolve(process.cwd(), tsconfig.compilerOptions.baseUrl);
+};
+
 module.exports = {
   "staticDirs": [
     '../public'
@@ -33,6 +38,9 @@ module.exports = {
   },
   webpackFinal: async (config) => {
     return merge(config, {
+      resolve: {
+        modules: [getBaseDir()],
+      },
       output: {
         publicPath: `${prefix}/`,
       },
