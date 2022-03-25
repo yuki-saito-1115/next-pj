@@ -1,5 +1,13 @@
 module.exports = {
-  'typescript' : {
+  webpackFinal: async (config, { configType }) => {
+    config.output.publicPath = '/my-prefix/';
+    return config;
+  },
+  managerWebpack: async (config) => {
+    config.output.publicPath = '/my-prefix/';
+    return config;
+  },
+  'typescript': {
     reactDocgen: false
   },
   'stories': [

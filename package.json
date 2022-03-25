@@ -5,7 +5,7 @@
   "scripts": {
     "build": "npm run build:export && npm run build-storybook",
     "build:export": "next build && next export",
-    "build-storybook": "build-storybook -o out/_mlc/storybook",
+    "build-storybook": "build-storybook -o out/_mlc/storybook -- --preview-url=/my-prefix/iframe.html",
     "lint": "next lint",
     "dev": "next build && next dev",
     "start": "run-p dev server storybook",
