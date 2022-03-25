@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next build && next dev",
+    "build-storybook": "build-storybook -o out/_mlc/storybook",
     "build": "next export && npm run build-storybook",
-    "start": "next start",
     "lint": "next lint",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o out/_mlc/storybook"
+    "dev": "next build && next dev",
+    "start": "run-p dev server storybook",
+    "start:next": "next start",
+    "server": "wait-on http://localhost:3000 && opener http://localhost:3000",
+    "storybook": "start-storybook -p 6006 -s public"
   },
   "dependencies": {
     "next": "12.1.0",
@@ -30,6 +32,9 @@
     "babel-loader": "^8.2.4",
     "eslint": "8.11.0",
     "eslint-config-next": "12.1.0",
-    "typescript": "4.6.2"
+    "npm-run-all": "^4.1.5",
+    "opener": "^1.5.2",
+    "typescript": "4.6.2",
+    "wait-on": "^6.0.1"
   }
 }
