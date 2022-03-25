@@ -1,5 +1,19 @@
+const path = require('path');
+
 module.exports = {
-  'typescript' : {
+  webpackFinal(config) {
+    config.output = {
+      path: `${__dirname}/_mlc/storybook`,
+    },
+    config.resolve.modules = [
+      ...(config.resolve.modules || []),
+      path.resolve(__dirname)
+    ]
+
+    return config;
+  },
+
+  'typescript': {
     reactDocgen: false
   },
   'stories': [
