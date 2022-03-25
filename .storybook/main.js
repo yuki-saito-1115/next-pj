@@ -1,4 +1,14 @@
 module.exports = {
+  webpackFinal: async (baseConfig) => {
+    // @see https://github.com/storybookjs/storybook/issues/3916#issuecomment-407681239
+    baseConfig.resolve.modules = [
+      ...(baseConfig.resolve.modules || []),
+      path.resolve('./'),
+    ]
+  },
+  "staticDirs": [
+    '../public'
+  ],
   'typescript' : {
     reactDocgen: false
   },
