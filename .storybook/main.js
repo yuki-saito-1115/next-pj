@@ -1,4 +1,13 @@
+const path = require('path')
+
 module.exports = {
+  webpackFinal: async (baseConfig) => {
+    baseConfig.resolve.modules = [
+      ...(baseConfig.resolve.modules || []),
+      path.resolve(__dirname, '../'),
+    ]
+    return baseConfig
+  },
   'typescript': {
     reactDocgen: false
   },
