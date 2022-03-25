@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "build": "npm run build:export && npm run build-storybook",
+    "build:export": "next build && next export",
     "build-storybook": "build-storybook -o out/_mlc/storybook",
-    "build": "next export && npm run build-storybook",
     "lint": "next lint",
     "dev": "next build && next dev",
     "start": "run-p dev server storybook",
