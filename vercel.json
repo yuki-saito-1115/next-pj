@@ -1,8 +1,0 @@
-{
-  "redirects": [
-    {
-      "source": "/_mlc/storybook",
-      "destination": "/_mlc/storybook/index?path=/story/example-introduction--page"
-    }
-  ]
-}
